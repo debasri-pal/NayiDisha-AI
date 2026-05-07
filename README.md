@@ -60,6 +60,8 @@ Face Detection Integration
 
 
 📂 Project Structure
+
+```bash
 NayiDisha-AI/
 │
 ├── backend/
@@ -79,6 +81,7 @@ NayiDisha-AI/
 │   └── package.json
 │
 └── README.md
+```
 
 ⚙️ Installation & Setup
 1️⃣ Clone Repository
