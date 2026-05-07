@@ -1,0 +1,387 @@
+/* Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+@import "tailwindcss";
+
+/* =========================
+   ROOT COLORS
+========================= */
+
+:root {
+  --primary: #81A6C6;
+  --secondary: #AACDDC;
+  --light: #F3E3D0;
+  --cream: #D2C4B4;
+
+  --bg-dark: #0f1720;
+  --card-dark: #16202d;
+
+  --text-light: #f8fafc;
+  --text-muted: #cbd5e1;
+}
+
+/* =========================
+   GLOBAL RESET
+========================= */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+
+  background:
+    radial-gradient(circle at top left, rgba(129, 166, 198, 0.18), transparent 30%),
+    radial-gradient(circle at bottom right, rgba(170, 205, 220, 0.15), transparent 30%),
+    var(--bg-dark);
+
+  color: var(--text-light);
+
+  min-height: 100vh;
+
+  overflow-x: hidden;
+
+  font-family: 'Inter', sans-serif;
+  letter-spacing: -0.02em;
+}
+
+/* =========================
+   SCROLLBAR
+========================= */
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #111827;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(
+    to bottom,
+    var(--primary),
+    var(--secondary)
+  );
+
+  border-radius: 20px;
+}
+
+/* =========================
+   TEXT SELECTION
+========================= */
+
+::selection {
+  background: var(--primary);
+  color: white;
+}
+
+/* =========================
+   GLASS EFFECT
+========================= */
+
+.glass {
+  background: rgba(8, 15, 30, 0.58);
+
+  backdrop-filter: blur(22px);
+
+  -webkit-backdrop-filter: blur(22px);
+
+  border: 1px solid rgba(255,255,255,0.08);
+
+  box-shadow:
+    0 10px 40px rgba(0,0,0,0.35),
+    inset 0 1px 0 rgba(255,255,255,0.04);
+}
+
+.premium-glow {
+  position: relative;
+}
+
+.premium-glow::before {
+  content: "";
+
+  position: absolute;
+
+  inset: -1px;
+
+  border-radius: inherit;
+
+  padding: 1px;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(79,140,255,0.9),
+      rgba(123,97,255,0.7),
+      rgba(220,120,255,0.4)
+    );
+
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+
+  -webkit-mask-composite: xor;
+
+  mask-composite: exclude;
+
+  pointer-events: none;
+
+  box-shadow:
+    0 0 30px rgba(123,97,255,0.25);
+}
+/* =========================
+   GRADIENT TEXT
+========================= */
+
+.gradient-text {
+  background: linear-gradient(
+    to right,
+    var(--primary),
+    var(--secondary),
+    var(--light)
+  );
+
+  background-clip: text;
+  -webkit-background-clip: text;
+
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+}
+
+/* =========================
+   BUTTONS
+========================= */
+
+.primary-btn {
+  background: linear-gradient(
+    to right,
+    var(--primary),
+    var(--secondary)
+  );
+
+  color: #0f1720;
+
+  font-weight: 700;
+
+  padding: 14px 32px;
+
+  border-radius: 16px;
+
+  transition: all 0.3s ease;
+
+  box-shadow:
+    0 10px 30px rgba(129, 166, 198, 0.3);
+}
+
+.primary-btn:hover {
+  transform: translateY(-3px) scale(1.02);
+
+  box-shadow:
+    0 14px 40px rgba(129, 166, 198, 0.45);
+}
+
+.secondary-btn {
+  border: 2px solid var(--primary);
+
+  color: var(--primary);
+
+  padding: 14px 32px;
+
+  border-radius: 16px;
+
+  transition: all 0.3s ease;
+}
+
+.secondary-btn:hover {
+  background: var(--primary);
+
+  color: #0f1720;
+
+  transform: translateY(-2px);
+}
+
+/* =========================
+   CARD UI
+========================= */
+
+.card-ui {
+  background: linear-gradient(
+    145deg,
+    rgba(22, 32, 45, 0.95),
+    rgba(15, 23, 32, 0.95)
+  );
+
+  border: 1px solid rgba(170, 205, 220, 0.12);
+
+  border-radius: 24px;
+
+  box-shadow:
+    0 10px 40px rgba(0, 0, 0, 0.35);
+
+  transition: all 0.3s ease;
+}
+
+.card-ui:hover {
+  transform: translateY(-5px);
+
+  border-color: rgba(170, 205, 220, 0.3);
+
+  box-shadow:
+    0 16px 50px rgba(129, 166, 198, 0.15);
+}
+
+/* =========================
+   INPUTS
+========================= */
+
+input,
+textarea,
+select {
+  background: rgba(255, 255, 255, 0.04);
+
+  border: 1px solid rgba(170, 205, 220, 0.15);
+
+  color: white;
+
+  transition: 0.3s ease;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  outline: none;
+
+  border-color: var(--primary);
+
+  box-shadow:
+    0 0 0 4px rgba(129, 166, 198, 0.2);
+}
+
+/* =========================
+   ANIMATIONS
+========================= */
+
+.fade-in {
+  animation: fadeIn 1s ease forwards;
+}
+
+.float {
+  animation: floating 4s ease-in-out infinite;
+}
+
+.pulse-soft {
+  animation: pulseSoft 2s infinite;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes floating {
+  0% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+@keyframes pulseSoft {
+  0% {
+    box-shadow: 0 0 0 0 rgba(129, 166, 198, 0.5);
+  }
+
+  70% {
+    box-shadow: 0 0 0 18px rgba(129, 166, 198, 0);
+  }
+
+  100% {
+    box-shadow: 0 0 0 0 rgba(129, 166, 198, 0);
+  }
+}
+
+/* =========================
+   SECTION SPACING
+========================= */
+
+.section-padding {
+  padding-left: 6%;
+  padding-right: 6%;
+}
+
+/* =========================
+   HERO BACKGROUND
+========================= */
+
+.hero-bg {
+  position: relative;
+
+  background:
+    radial-gradient(circle at top left,
+      rgba(79, 140, 255, 0.18),
+      transparent 28%),
+
+    radial-gradient(circle at bottom right,
+      rgba(123, 97, 255, 0.18),
+      transparent 28%),
+
+    linear-gradient(
+      135deg,
+      #050816 0%,
+      #081120 40%,
+      #07111d 100%
+    );
+
+  overflow: hidden;
+}
+
+.hero-bg::before {
+  content: "";
+
+  position: absolute;
+
+  inset: 0;
+
+  background:
+    radial-gradient(circle at 20% 20%, rgba(129, 166, 198, 0.18), transparent 25%),
+    radial-gradient(circle at 80% 80%, rgba(170, 205, 220, 0.14), transparent 25%);
+
+  z-index: -1;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 768px) {
+  .section-padding {
+    padding-left: 5%;
+    padding-right: 5%;
+  }
+
+  .primary-btn,
+  .secondary-btn {
+    width: 100%;
+  }
+}
